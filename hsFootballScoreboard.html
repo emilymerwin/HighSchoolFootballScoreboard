@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<title>AJC High school Football Scoreboard</title>
+<base target="_parent" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" href="http://host.coxmediagroup.com/ajc/digitalprojects/global/css/iFrame_Medley.css" type="text/css"/>
+<link rel="stylesheet" href="http://alt.coxnewsweb.com/ajc/_newsapps/libraries/css/gumby/gumby.css" type="text/css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.2.2/d3.v3.min.js"></script>
+<style type="text/css">
+.game {
+	margin-top: 10px;
+	background-color: #EFEFEF;
+	font-size:11px;
+}
+.team{
+	padding-left:4px;
+}
+.score{
+	text-align:right;
+	padding-right:4px;
+}
+hr {
+background-color:#FFF;
+border-bottom: 1px dashed gray;
+border-top:none;
+height:0px;
+line-height:0;
+text-align:center;
+margin:0;
+}
+#chart .game .winner{
+	color: red !important;
+}
+.meta{
+	background-color:#E0E0E0;
+	font-size:10px;
+	line-height:1.5em;
+}
+.gameStatus{
+	text-align:right;
+	padding-right:4px;
+}
+.startTime{
+	padding-left:4px;
+}
+
+.row{
+	min-width:300px;/*Gumby default 320*/
+}
+
+</style>
+</head>
+<body>
+
+<div class="sixteen colgrid" style="max-width:972px"><div id="chart" class="row"></div></div>
+
+<script type="text/javascript">
+//var myWidth =  parseFloat(d3.select("body").style("width")) - 20 ;
+var data1;
+
+d3.json("SampleWeek.json", function(error, data) {
+	data1 = data;
+	
+	for (var i=0; i<data1.length; i++){
+		var gameText = "";
+		var awayClass = "";
+		var homeClass = "";
+		//data1[i].id = data1[i].id;
+		data1[i].gameStatus = data1[i].statusText;
+		data1[i].startTime = data1[i].startTime;
+		data1[i].homeTeam = data1[i].home.name;
+		data1[i].homeScore = parseInt(data1[i].home.score);
+		data1[i].awayTeam = data1[i].away.name;
+		data1[i].awayScore = parseInt(data1[i].away.score);
+		if(data1[i].awayScore > data1[i].homeScore){
+			awayClass = "winner";
+		}
+		else if(data1[i].awayScore < data1[i].homeScore){
+			homeClass = "winner";
+		}
+		data1[i].gameText = "<div class='row team'><div class='fourteen columns "+awayClass+"'><strong>A: </strong>"+data1[i].awayTeam+"</div><div class='two columns score "+awayClass+"'>"+data1[i].awayScore+"</div></div><hr><div class='row team'><div class='fourteen columns "+homeClass+"'><strong>H: </strong>"+data1[i].homeTeam+"</div><div class='two columns score "+homeClass+"'>"+data1[i].homeScore+"</div></div><div class='row meta'><div class='sixteen columns'><div class='alpha columns startTime'>"+data1[i].startTime+"</div><div class='omega columns gameStatus'> "+data1[i].gameStatus+"</div></div></div>"
+	}
+doGrid();
+
+})
+function doGrid(){
+	d3.select("#chart").selectAll("div .game")
+	.data(data1.sort(function (a, b) {
+	    if (a.away.name > b.away.name)
+	      return 1;
+	    if (a.away.name < b.away.name)
+	      return -1;
+	    // a must be equal to b
+	    return 0;
+	}))
+	.enter().append("div")
+	.attr("class", "four columns game")
+	.html(function(d) { return d.gameText});
+	d3.selectAll("div .game").attr("class", function(d, i){if(i%4 === 0){
+		return "alpha four columns game";
+	} else{return "four columns game"}})
+}
+/*d3.xml("SampleWeek.xml", "application/xml", function(xml) {
+	var nodes = self.nodes = d3.select(xml).selectAll("game")[0];
+	game = xml.documentElement.getElementsByTagName("game");
+	var mychart = d3.select("#chart")
+	.selectAll("div .game")
+	.data(nodes)
+	.enter().append("div")
+	.attr("class", "game");
+	//.text(function(d) {return d.textContent; });
+	mychart.selectAll("div .home")
+//	.data(nodes.select("home")[0])
+//	.enter().append("div")
+//	.attr("class", "home")
+//	.text(function(d){console.log(d); return d.textContent})
+});*/
+
+</script>
+<script>
+//New News Apps tracking code
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-28102445-5', 'myajc.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
