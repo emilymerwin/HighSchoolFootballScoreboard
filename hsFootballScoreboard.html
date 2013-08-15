@@ -6,9 +6,11 @@
 <base target="_parent" />
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <link rel="stylesheet" href="http://host.coxmediagroup.com/ajc/digitalprojects/global/css/iFrame_Medley.css" type="text/css"/>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 <link rel="stylesheet" href="http://alt.coxnewsweb.com/ajc/_newsapps/libraries/css/gumby/css/gumby.css" type="text/css"/>
 <script src="http://alt.coxnewsweb.com/ajc/_newsapps/libraries/css/gumby/js/libs/modernizr-2.6.2.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.2.2/d3.v3.min.js"></script>
 <style type="text/css">
 .game {
@@ -52,19 +54,30 @@ margin:0;
 	min-width:300px;/*Gumby default 320*/
 }
 
+#numScores{
+	padding:5px 7px;
+}
 </style>
 </head>
 <body>
 
+<div class="sixteen colgrid" style="max-width:972px">
+<ul class="row">
+	<li class="field four columns alpha"><input class="search searchform input" id="searchBox" type="searcg" placeholder="Search for a school"><button id="resetBtn" type="button" class="button">Reset</button></li>
+	<li class="field four columns">Results: <span class="input text" id="numScores"> </span></li>
+</ul>
+</div>
 <div class="sixteen colgrid" style="max-width:972px"><div id="chart" class="row"></div></div>
 
 <script type="text/javascript">
+$(".searchform").submit(function(){searchGames();})
 //var myWidth =  parseFloat(d3.select("body").style("width")) - 20 ;
 var data1;
-
+var teamsArr = [];
+var filtered = false;
 d3.json("SampleWeek.json", function(error, data) {
 	data1 = data;
-	
+	d3.select("#numScores").text(data1.length);
 	for (var i=0; i<data1.length; i++){
 		var gameText = "";
 		var awayClass = "";
@@ -84,25 +97,59 @@ d3.json("SampleWeek.json", function(error, data) {
 		}
 		data1[i].gameText = "<div class='row team'><div class='fourteen columns "+awayClass+"'><strong>A: </strong>"+data1[i].awayTeam+"</div><div class='two columns score "+awayClass+"'>"+data1[i].awayScore+"</div></div><hr><div class='row team'><div class='fourteen columns "+homeClass+"'><strong>H: </strong>"+data1[i].homeTeam+"</div><div class='two columns score "+homeClass+"'>"+data1[i].homeScore+"</div></div><div class='row meta'><div class='sixteen columns'><div class='alpha columns startTime'>"+data1[i].startTime+"</div><div class='omega columns gameStatus'> "+data1[i].gameStatus+"</div></div></div>"
 	}
-doGrid();
+	teamsArr = teamsArr.sort();
+	doGrid();
+});
+function doGrid(){	
+	var chart = d3.select("#chart").selectAll("div .game");
+	buildGrid();
+	function buildGrid(){
+		$("#searchBox").val(""); //clear any cached searches
+		chart.data(data1.sort(function (a, b) {
+	    	if (a.away.name > b.away.name){ return 1;}
+	    	if (a.away.name < b.away.name){ return -1;}
+			// a must be equal to b
+			return 0;
+		}))
+		.enter().append("div")
+		.attr("class", "four columns game")
+		.html(function(d) { return d.gameText});
 
-})
-function doGrid(){
-	d3.select("#chart").selectAll("div .game")
-	.data(data1.sort(function (a, b) {
-	    if (a.away.name > b.away.name)
-	      return 1;
-	    if (a.away.name < b.away.name)
-	      return -1;
-	    // a must be equal to b
-	    return 0;
-	}))
-	.enter().append("div")
-	.attr("class", "four columns game")
-	.html(function(d) { return d.gameText});
-	d3.selectAll("div .game").attr("class", function(d, i){if(i%4 === 0){
-		return "alpha four columns game";
-	} else{return "four columns game"}})
+		d3.selectAll("div .game").attr("class", function(d, i){
+			if(i%4 === 0){ return "alpha four columns game";}//fix left margin with alpha class
+			else{return "four columns game"}
+		})
+	}//buildGrid
+	$( "#searchBox" ).autocomplete({
+		source: teamsArr,
+		select: function( event, ui){
+			filtered = true;
+			var newdata = data1.filter(function(d) {return d.home.name === ui.item.value | d.away.name === ui.item.value});
+			searchGames(newdata);
+		}
+	})
+
+	$("#resetBtn").click(function(){
+		if(filtered){
+			d3.selectAll("div .game").remove(); 
+			filtered = false; 
+			buildGrid(); 
+		} 
+	})
+
+	function searchGames(newdata){
+		d3.select("#numScores").text(newdata.length);
+		
+		var chart2 = d3.select("#chart").selectAll("div .game")
+		.data(newdata, function(d) { return d.home.name });
+		
+		chart2.enter().append("div")
+			.attr("class", "four columns game")
+			.html(function(d){ return d.gameText })
+		
+		d3.transition(chart2.exit())
+			.remove();
+	}
 }
 /*d3.xml("SampleWeek.xml", "application/xml", function(xml) {
 	var nodes = self.nodes = d3.select(xml).selectAll("game")[0];
