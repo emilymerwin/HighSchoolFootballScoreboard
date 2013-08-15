@@ -49,18 +49,15 @@ margin:0;
 .startTime{
 	padding-left:4px;
 }
-
 .row{
 	min-width:300px;/*Gumby default 320*/
 }
-
 #numScores{
 	padding:5px 7px;
 }
 </style>
 </head>
 <body>
-
 <div class="sixteen colgrid" style="max-width:972px">
 <ul class="row">
 	<li class="field four columns alpha"><input class="search searchform input" id="searchBox" type="searcg" placeholder="Search for a school"><button id="resetBtn" type="button" class="button">Reset</button></li>
@@ -79,23 +76,19 @@ d3.json("SampleWeek.json", function(error, data) {
 	data1 = data;
 	d3.select("#numScores").text(data1.length);
 	for (var i=0; i<data1.length; i++){
-		var gameText = "";
 		var awayClass = "";
 		var homeClass = "";
-		//data1[i].id = data1[i].id;
-		data1[i].gameStatus = data1[i].statusText;
-		data1[i].startTime = data1[i].startTime;
-		data1[i].homeTeam = data1[i].home.name;
-		data1[i].homeScore = parseInt(data1[i].home.score);
-		data1[i].awayTeam = data1[i].away.name;
-		data1[i].awayScore = parseInt(data1[i].away.score);
-		if(data1[i].awayScore > data1[i].homeScore){
+		var homeScore = parseInt(data1[i].home.score);
+		var awayScore = parseInt(data1[i].away.score);
+		teamsArr.push(data1[i].home.name);
+		teamsArr.push(data1[i].away.name);
+		if(awayScore > homeScore){
 			awayClass = "winner";
 		}
-		else if(data1[i].awayScore < data1[i].homeScore){
+		else if(awayScore < homeScore){
 			homeClass = "winner";
 		}
-		data1[i].gameText = "<div class='row team'><div class='fourteen columns "+awayClass+"'><strong>A: </strong>"+data1[i].awayTeam+"</div><div class='two columns score "+awayClass+"'>"+data1[i].awayScore+"</div></div><hr><div class='row team'><div class='fourteen columns "+homeClass+"'><strong>H: </strong>"+data1[i].homeTeam+"</div><div class='two columns score "+homeClass+"'>"+data1[i].homeScore+"</div></div><div class='row meta'><div class='sixteen columns'><div class='alpha columns startTime'>"+data1[i].startTime+"</div><div class='omega columns gameStatus'> "+data1[i].gameStatus+"</div></div></div>"
+		data1[i].gameText = "<div class='row team'><div class='fourteen columns "+awayClass+"'><strong>A: </strong>"+data1[i].away.name+"</div><div class='two columns score "+awayClass+"'>"+awayScore+"</div></div><hr><div class='row team'><div class='fourteen columns "+homeClass+"'><strong>H: </strong>"+data1[i].home.name+"</div><div class='two columns score "+homeClass+"'>"+homeScore+"</div></div><div class='row meta'><div class='sixteen columns'><div class='alpha columns startTime'>"+data1[i].startTime+"</div><div class='omega columns gameStatus'> "+data1[i].statusText+"</div></div></div>";
 	}
 	teamsArr = teamsArr.sort();
 	doGrid();
