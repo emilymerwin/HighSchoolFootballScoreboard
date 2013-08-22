@@ -72,14 +72,18 @@ $(".searchform").submit(function(){searchGames();})
 var data1;
 var teamsArr = [];
 var filtered = false;
-d3.json("SampleWeek.json", function(error, data) {
-	data1 = data;
-	d3.select("#numScores").text(data1.length);
+jQuery.getJSON("http://www.scoreatl.com/xml/scoreboard/hs/json/", function(data) {
+//jQuery.getJSON("testJSON2.json", function(data) {
+	data1 = data.game;
+	
 	for (var i=0; i<data1.length; i++){
 		var awayClass = "";
 		var homeClass = "";
 		var homeScore = parseInt(data1[i].home.score);
 		var awayScore = parseInt(data1[i].away.score);
+		var startTime = new Date(data1[i].startTime);
+		data1[i].startTime = startTime;
+		data1[i].hasStarted = hasStarted(startTime);
 		teamsArr.push(data1[i].home.name);
 		teamsArr.push(data1[i].away.name);
 		if(awayScore > homeScore){
@@ -88,7 +92,7 @@ d3.json("SampleWeek.json", function(error, data) {
 		else if(awayScore < homeScore){
 			homeClass = "winner";
 		}
-		data1[i].gameText = "<div class='row team'><div class='fourteen columns "+awayClass+"'><strong>A: </strong>"+data1[i].away.name+"</div><div class='two columns score "+awayClass+"'>"+awayScore+"</div></div><hr><div class='row team'><div class='fourteen columns "+homeClass+"'><strong>H: </strong>"+data1[i].home.name+"</div><div class='two columns score "+homeClass+"'>"+homeScore+"</div></div><div class='row meta'><div class='sixteen columns'><div class='alpha columns startTime'>"+data1[i].startTime+"</div><div class='omega columns gameStatus'> "+data1[i].statusText+"</div></div></div>";
+		data1[i].gameText = "<div class='row team'><div class='fourteen columns "+awayClass+"'><strong>A: </strong>"+data1[i].away.name+"</div><div class='two columns score "+awayClass+"'>"+awayScore+"</div></div><hr><div class='row team'><div class='fourteen columns "+homeClass+"'><strong>H: </strong>"+data1[i].home.name+"</div><div class='two columns score "+homeClass+"'>"+homeScore+"</div></div><div class='row meta'><div class='sixteen columns'><div class='alpha columns startTime'>"+reformatTimestamp(startTime)+"</div><div class='omega columns gameStatus'> "+data1[i].statusText+"</div></div></div>";
 	}
 	teamsArr = teamsArr.sort();
 	doGrid();
@@ -142,24 +146,34 @@ function doGrid(){
 		
 		d3.transition(chart2.exit())
 			.remove();
+function setTimeFormat(passedHour) {
+	if (passedHour > 0 && passedHour < 13) {
+		if (passedHour === "0") passedHour = 12;
+		return (passedHour);
 	}
+	if (passedHour == 0) {
+		return (12);
+	}
+	return (passedHour-12);
 }
-/*d3.xml("SampleWeek.xml", "application/xml", function(xml) {
-	var nodes = self.nodes = d3.select(xml).selectAll("game")[0];
-	game = xml.documentElement.getElementsByTagName("game");
-	var mychart = d3.select("#chart")
-	.selectAll("div .game")
-	.data(nodes)
-	.enter().append("div")
-	.attr("class", "game");
-	//.text(function(d) {return d.textContent; });
-	mychart.selectAll("div .home")
-//	.data(nodes.select("home")[0])
-//	.enter().append("div")
-//	.attr("class", "home")
-//	.text(function(d){console.log(d); return d.textContent})
-});*/
-
+function showZeroFilled(inValue) {
+	if (inValue > 9) {
+		return "" + inValue;
+	}
+	return "0" + inValue;
+}
+function setAmPm(timestamp) {
+	if (timestamp.getHours() < 12) {
+		return (" a.m.");
+	}
+	return (" p.m.");
+}
+function reformatTimestamp(timestamp) {
+	var formattedTime = setTimeFormat(timestamp.getHours()) + ":" + showZeroFilled(timestamp.getMinutes()) + setAmPm(timestamp);
+	var formattedYear = (timestamp.getMonth()+1)+"/"+timestamp.getDate()+"/"+(timestamp.getFullYear()+ '').substring(2, 4);//empty string before the substring is to convert to string more efficiently
+	return(formattedTime+" "+formattedYear);
+}
+}
 </script>
 <script>
 //New News Apps tracking code
