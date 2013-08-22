@@ -62,11 +62,23 @@ margin:0;
 <ul class="row">
 	<li class="field four columns alpha"><input class="search searchform input" id="searchBox" type="searcg" placeholder="Search for a school"><button id="resetBtn" type="button" class="button">Reset</button></li>
 	<li class="field four columns">Results: <span class="input text" id="numScores"> </span></li>
+	<li class="four columns omega">Show future games? <input type="checkbox" id="future"/></li>
 </ul>
 </div>
 <div class="sixteen colgrid" style="max-width:972px"><div id="chart" class="row"></div></div>
 
 <script type="text/javascript">
+var showFuture = false;
+$('#future').prop('checked', false);//handle browser form caching
+$("#future").change(function() {
+    if(this.checked) {
+		showFuture = true;
+    }
+	else{
+		showFuture = false;
+	}
+	doGrid();
+});
 $(".searchform").submit(function(){searchGames();})
 //var myWidth =  parseFloat(d3.select("body").style("width")) - 20 ;
 var data1;
@@ -101,8 +113,10 @@ function doGrid(){
 	var chart = d3.select("#chart").selectAll("div .game");
 	buildGrid();
 	function buildGrid(){
-		$("#searchBox").val(""); //clear any cached searches
-		chart.data(data1.sort(function (a, b) {
+		$("#searchBox").val(""); //clear any left over searches
+		var data2 = checkFuture(data1);
+		d3.select("#numScores").text(data2.length);
+		var chartTemp = chart.data(data2.sort(function (a, b) {
 	    	if (a.away.name > b.away.name){ return 1;}
 	    	if (a.away.name < b.away.name){ return -1;}
 			// a must be equal to b
@@ -173,6 +187,17 @@ function reformatTimestamp(timestamp) {
 	var formattedYear = (timestamp.getMonth()+1)+"/"+timestamp.getDate()+"/"+(timestamp.getFullYear()+ '').substring(2, 4);//empty string before the substring is to convert to string more efficiently
 	return(formattedTime+" "+formattedYear);
 }
+function checkFuture(stuff){
+	if(showFuture){
+		return data1;
+	}
+	else{
+		//if the game hasn't started don't show it. Because UTC time counts up we want our start timestamp to be smaller than the current timestamp 
+		return(data1.filter(function(d){return d.hasStarted}));
+	}
+}
+function hasStarted(startTime){
+	return startTime <= new Date().getTime();
 }
 </script>
 <script>
