@@ -1,0 +1,35 @@
+{
+  "game":{
+    "@attributes":{
+      "id":"35275"
+    },
+    "category":"PREP",
+    "type":"VARSITY FOOTBALL",
+    "statusText":{
+      
+    },
+    "infoURL":{
+      
+    },
+    "startTime":"2013-08-22T19:00",
+    "home":{
+      "name":"Jenkins",
+      "score":"0",
+      "quarterBreakdown":{
+        
+      },
+      "classification":"AAAAA",
+      "region":"3\/AAAAA"
+    },
+    "away":{
+      "name":"Savannah Chr.",
+      "score":"0",
+      "quarterBreakdown":{
+        
+      },
+      "classification":"A",
+      "region":"3\/A"
+    },
+    "state":"GA"
+  }
+}

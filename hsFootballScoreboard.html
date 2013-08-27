@@ -69,16 +69,6 @@ margin:0;
 
 <script type="text/javascript">
 var showFuture = false;
-$('#future').prop('checked', false);//handle browser form caching
-$("#future").change(function() {
-    if(this.checked) {
-		showFuture = true;
-    }
-	else{
-		showFuture = false;
-	}
-	doGrid();
-});
 $(".searchform").submit(function(){searchGames();})
 //var myWidth =  parseFloat(d3.select("body").style("width")) - 20 ;
 var data1;
@@ -86,34 +76,67 @@ var teamsArr = [];
 var filtered = false;
 jQuery.getJSON("http://www.scoreatl.com/xml/scoreboard/hs/json/", function(data) {
 //jQuery.getJSON("testJSON2.json", function(data) {
+//jQuery.getJSON("http://www.scoreatl.com/xml/scoreboard/hs/json/", function(data) {
+jQuery.getJSON("just1.json", function(data) {
+//jQuery.getJSON("testJSON3.json", function(data) {
 	data1 = data.game;
-	
-	for (var i=0; i<data1.length; i++){
+	if(data1.length === undefined){
+		setProps(data1);
+	}
+	else{
+		for (var i=0; i<data1.length; i++){
+			teamsArr.push(data1[i].home.name);//we don't a search menu if there's only one game, so do that here instead of in setProps
+			teamsArr.push(data1[i].away.name);
+			setProps(data1[i]);	
+		}	
+	}
+
+	function setProps(game){
 		var awayClass = "";
 		var homeClass = "";
-		var homeScore = parseInt(data1[i].home.score);
-		var awayScore = parseInt(data1[i].away.score);
-		var startTime = new Date(data1[i].startTime);
-		data1[i].startTime = startTime;
-		data1[i].hasStarted = hasStarted(startTime);
-		teamsArr.push(data1[i].home.name);
-		teamsArr.push(data1[i].away.name);
+		var homeScore = parseInt(game.home.score);
+		var awayScore = parseInt(game.away.score);
+		var startTime = new Date(game.startTime);
+		game.startTime = startTime;
+		game.hasStarted = hasGameStarted(startTime);
 		if(awayScore > homeScore){
 			awayClass = "winner";
 		}
 		else if(awayScore < homeScore){
 			homeClass = "winner";
 		}
-		data1[i].gameText = "<div class='row team'><div class='fourteen columns "+awayClass+"'><strong>A: </strong>"+data1[i].away.name+"</div><div class='two columns score "+awayClass+"'>"+awayScore+"</div></div><hr><div class='row team'><div class='fourteen columns "+homeClass+"'><strong>H: </strong>"+data1[i].home.name+"</div><div class='two columns score "+homeClass+"'>"+homeScore+"</div></div><div class='row meta'><div class='sixteen columns'><div class='alpha columns startTime'>"+reformatTimestamp(startTime)+"</div><div class='omega columns gameStatus'> "+data1[i].statusText+"</div></div></div>";
+		game.gameText = "<ul class='team row subnav'><li class='"+awayClass+"'><strong>A: </strong>"+game.away.name+"</li><li class='score "+awayClass+"'>"+awayScore+"</li></ul><hr><ul class='team row subnav'><li class='"+homeClass+"'><strong>H: </strong>"+game.home.name+"</li><li class='score "+homeClass+"'>"+homeScore+"</li></ul><ul class='row tiles meta'><li class='startTime'>"+reformatTimestamp(startTime)+"</li><li class='gameStatus'> "+game.statusText+"</li></ul>";
+		
 	}
-	teamsArr = teamsArr.sort();
 	doGrid();
+	
+	if(data1.length > parseInt($("#numScores").text())){
+		$('#future').prop('checked', false);//handle browser form caching
+		$("#future").change(function() {
+		    if(this.checked) {
+				showFuture = true;
+		    }
+			else{
+				showFuture = false;
+			}
+			doGrid();
+		});
+	}
+	else{
+		$("#futureDiv").hide();
+	}
 });
 function doGrid(){	
 	var chart = d3.select("#chart").selectAll("div .game");
-	buildGrid();
+	if(data1.length >1){
+		buildGrid();
+	}
+	else{
+		justOne();
+	}
 	function buildGrid(){
 		$("#searchBox").val(""); //clear any left over searches
+		teamsArr = teamsArr.sort();
 		var data2 = checkFuture(data1);
 		d3.select("#numScores").text(data2.length);
 		var chartTemp = chart.data(data2.sort(function (a, b) {
@@ -131,7 +154,14 @@ function doGrid(){
 			else{return "four columns game"}
 		})
 	}//buildGrid
-	$( "#searchBox" ).autocomplete({
+	function justOne(){
+		$("#filters").hide();
+		d3.select("#numScores").text("1");
+		$("#chart").append("li")
+		.attr("class", "game")
+		.html(data1.gameText);
+	}
+	$("#searchBox").autocomplete({
 		source: teamsArr,
 		select: function( event, ui){
 			filtered = true;
