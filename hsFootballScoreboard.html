@@ -7,7 +7,7 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <link rel="stylesheet" href="http://host.coxmediagroup.com/ajc/digitalprojects/global/css/iFrame_Medley.css" type="text/css"/>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
-<link rel="stylesheet" href="http://alt.coxnewsweb.com/ajc/_newsapps/libraries/css/gumby/css/gumby.css" type="text/css"/>
+<link rel="stylesheet" href="css/gumby.css" type="text/css"/>
 <script src="http://alt.coxnewsweb.com/ajc/_newsapps/libraries/css/gumby/js/libs/modernizr-2.6.2.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
@@ -22,7 +22,8 @@
 	font-size:11px;
 }
 .team{
-	padding-left:4px;
+	padding: 0 0 0 4px;
+	font-size:12px !important;
 }
 .score{
 	text-align:right;
@@ -61,7 +62,8 @@ margin:0;
 	min-width:300px;/*Gumby default 320*/
 }
 #numScores{
-	padding:5px 7px;
+	padding:4px 7px;
+}
 .game .tiles{
 	margin:0 !important;
 }
@@ -87,14 +89,11 @@ margin:0;
 
 <script type="text/javascript">
 var showFuture = false;
-$(".searchform").submit(function(){searchGames();})
 //var myWidth =  parseFloat(d3.select("body").style("width")) - 20 ;
 var bodyWidth = $("body").width();
 var data1;
 var teamsArr = [];
 var filtered = false;
-jQuery.getJSON("http://www.scoreatl.com/xml/scoreboard/hs/json/", function(data) {
-//jQuery.getJSON("testJSON2.json", function(data) {
 if(bodyWidth >= 700){
 	d3.selectAll("#chart").attr("class", "tiles four_up")
 }
@@ -109,8 +108,8 @@ else{
 }
 
 //jQuery.getJSON("http://www.scoreatl.com/xml/scoreboard/hs/json/", function(data) {
-jQuery.getJSON("just1.json", function(data) {
-//jQuery.getJSON("testJSON3.json", function(data) {
+//jQuery.getJSON("data/just1.json", function(data) {
+jQuery.getJSON("data/testJSON3.json", function(data) {
 	data1 = data.game;
 	if(data1.length === undefined){
 		setProps(data1);
@@ -243,7 +242,7 @@ function setAmPm(timestamp) {
 function reformatTimestamp(timestamp) {
 	var formattedTime = setTimeFormat(timestamp.getHours()) + ":" + showZeroFilled(timestamp.getMinutes()) + setAmPm(timestamp);
 	var formattedYear = (timestamp.getMonth()+1)+"/"+timestamp.getDate()+"/"+(timestamp.getFullYear()+ '').substring(2, 4);//empty string before the substring is to convert to string more efficiently
-	return(formattedTime+" "+formattedYear);
+	return (formattedTime+" "+formattedYear);
 }
 function checkFuture(){
 	if(showFuture){
@@ -263,11 +262,11 @@ function checkFuture(){
 		});
 	}
 }
-function hasStarted(startTime){
+function hasGameStarted(startTime){
 	return startTime <= new Date().getTime();
 }
 </script>
-<script>
+<!--<script>
 //New News Apps tracking code
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -276,6 +275,6 @@ function hasStarted(startTime){
 
   ga('create', 'UA-28102445-5', 'myajc.com');
   ga('send', 'pageview');
-</script>
+</script>-->
 </body>
 </html>
