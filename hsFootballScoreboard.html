@@ -169,17 +169,8 @@ function doGrid(){
 	function buildGrid(){
 		$("#searchBox").val(""); //clear any left over searches
 		teamsArr = teamsArr.sort();
-		var data2 = checkFuture(data1);
+		var data2 = checkFuture();
 		d3.select("#numScores").text(data2.length);
-		var chartTemp = chart.data(data2.sort(function (a, b) {
-	    	if (a.away.name > b.away.name){ return 1;}
-	    	if (a.away.name < b.away.name){ return -1;}
-			// a must be equal to b
-			return 0;
-		}))
-		.enter().append("div")
-		.attr("class", "four columns game")
-		.html(function(d) { return d.gameText});
 		var tempChart = chart.data(data2, function(d){return d.away.name});
 		
 		tempChart.exit().remove();
@@ -254,13 +245,22 @@ function reformatTimestamp(timestamp) {
 	var formattedYear = (timestamp.getMonth()+1)+"/"+timestamp.getDate()+"/"+(timestamp.getFullYear()+ '').substring(2, 4);//empty string before the substring is to convert to string more efficiently
 	return(formattedTime+" "+formattedYear);
 }
-function checkFuture(stuff){
+function checkFuture(){
 	if(showFuture){
-		return data1;
+		return aToZ(data1);
 	}
 	else{
 		//if the game hasn't started don't show it. Because UTC time counts up we want our start timestamp to be smaller than the current timestamp 
-		return(data1.filter(function(d){return d.hasStarted}));
+		var temp = data1.filter(function(d){return d.hasStarted});
+		return aToZ(temp);
+	}
+	function aToZ(data){
+		return data.sort(function (a, b) {
+		   	if (a.away.name > b.away.name){ return 1;}
+		   	if (a.away.name < b.away.name){ return -1;}
+			// a must be equal to b
+			return 0;
+		});
 	}
 }
 function hasStarted(startTime){
