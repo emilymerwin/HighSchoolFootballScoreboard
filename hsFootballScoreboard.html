@@ -13,6 +13,9 @@
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.2.2/d3.v3.min.js"></script>
 <style type="text/css">
+#scoreboard{
+	max-width:972px;
+}
 .game {
 	margin-top: 10px;
 	background-color: #EFEFEF;
@@ -24,6 +27,10 @@
 .score{
 	text-align:right;
 	padding-right:4px;
+	float:right !important;
+}
+li.game{
+	 padding-bottom: 0px;
 }
 hr {
 background-color:#FFF;
@@ -42,18 +49,25 @@ margin:0;
 	font-size:10px;
 	line-height:1.5em;
 }
-.gameStatus{
-	text-align:right;
+.tiles li.gameStatus{
+	float:right;
 	padding-right:4px;
 }
 .startTime{
 	padding-left:4px;
+	float:left;
 }
 .row{
 	min-width:300px;/*Gumby default 320*/
 }
 #numScores{
 	padding:5px 7px;
+.game .tiles{
+	margin:0 !important;
+}
+.game .tiles li{
+	margin:0 !important;
+}
 }
 </style>
 </head>
@@ -61,11 +75,13 @@ margin:0;
 <div class="sixteen colgrid" style="max-width:972px">
 <ul class="row">
 	<li class="field four columns alpha"><input class="search searchform input" id="searchBox" type="searcg" placeholder="Search for a school"><button id="resetBtn" type="button" class="button">Reset</button></li>
+<div id="scoreboard">
 	<li class="field four columns">Results: <span class="input text" id="numScores"> </span></li>
 	<li class="four columns omega">Show future games? <input type="checkbox" id="future"/></li>
 </ul>
 </div>
-<div class="sixteen colgrid" style="max-width:972px"><div id="chart" class="row"></div></div>
+<div class="row"><ul id="chart" class="tiles three_up"></ul></div>
+</div>
 
 <script type="text/javascript">
 var showFuture = false;
@@ -105,7 +121,7 @@ jQuery.getJSON("just1.json", function(data) {
 		else if(awayScore < homeScore){
 			homeClass = "winner";
 		}
-		game.gameText = "<ul class='team row subnav'><li class='"+awayClass+"'><strong>A: </strong>"+game.away.name+"</li><li class='score "+awayClass+"'>"+awayScore+"</li></ul><hr><ul class='team row subnav'><li class='"+homeClass+"'><strong>H: </strong>"+game.home.name+"</li><li class='score "+homeClass+"'>"+homeScore+"</li></ul><ul class='row tiles meta'><li class='startTime'>"+reformatTimestamp(startTime)+"</li><li class='gameStatus'> "+game.statusText+"</li></ul>";
+		game.gameText = "<ul class='team row tiles'><li class='"+awayClass+"'><strong>A: </strong>"+game.away.name+"</li><li class='score "+awayClass+"'>"+awayScore+"</li></ul><hr><ul class='team row tiles'><li class='"+homeClass+"'><strong>H: </strong>"+game.home.name+"</li><li class='score "+homeClass+"'>"+homeScore+"</li></ul><ul class='row tiles meta'><li class='startTime'>"+reformatTimestamp(startTime)+"</li><li class='gameStatus'> "+game.statusText+"</li></ul>";
 		
 	}
 	doGrid();
@@ -126,8 +142,8 @@ jQuery.getJSON("just1.json", function(data) {
 		$("#futureDiv").hide();
 	}
 });
-function doGrid(){	
-	var chart = d3.select("#chart").selectAll("div .game");
+function doGrid(){
+	var chart = d3.select("#chart").selectAll("li.game");
 	if(data1.length >1){
 		buildGrid();
 	}
@@ -148,18 +164,20 @@ function doGrid(){
 		.enter().append("div")
 		.attr("class", "four columns game")
 		.html(function(d) { return d.gameText});
-
-		d3.selectAll("div .game").attr("class", function(d, i){
-			if(i%4 === 0){ return "alpha four columns game";}//fix left margin with alpha class
-			else{return "four columns game"}
-		})
+		var tempChart = chart.data(data2, function(d){return d.away.name});
+		
+		tempChart.exit().remove();
+		
+		tempChart.enter().append("li")
+			.attr("class", "game")
+			.html(function(d) { return d.gameText});
 	}//buildGrid
 	function justOne(){
 		$("#filters").hide();
 		d3.select("#numScores").text("1");
 		$("#chart").append("li")
-		.attr("class", "game")
-		.html(data1.gameText);
+			.attr("class", "game")
+			.html(data1.gameText);
 	}
 	$("#searchBox").autocomplete({
 		source: teamsArr,
@@ -172,7 +190,7 @@ function doGrid(){
 
 	$("#resetBtn").click(function(){
 		if(filtered){
-			d3.selectAll("div .game").remove(); 
+			d3.selectAll("li.game").remove(); //get rid of any search items on display
 			filtered = false; 
 			buildGrid(); 
 		} 
@@ -181,15 +199,18 @@ function doGrid(){
 	function searchGames(newdata){
 		d3.select("#numScores").text(newdata.length);
 		
-		var chart2 = d3.select("#chart").selectAll("div .game")
-		.data(newdata, function(d) { return d.home.name });
+		var chart2 = d3.select("#chart").selectAll("li.game")
+			.data(newdata, function(d) {return d.away.name });
 		
-		chart2.enter().append("div")
-			.attr("class", "four columns game")
+		chart2.enter().append("li")
+			.attr("class", "game")
 			.html(function(d){ return d.gameText })
 		
 		d3.transition(chart2.exit())
 			.remove();
+	}//searchGames
+}//doGrid
+
 function setTimeFormat(passedHour) {
 	if (passedHour > 0 && passedHour < 13) {
 		if (passedHour === "0") passedHour = 12;
