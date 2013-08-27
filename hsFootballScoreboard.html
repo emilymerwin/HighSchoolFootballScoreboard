@@ -89,11 +89,25 @@ margin:0;
 var showFuture = false;
 $(".searchform").submit(function(){searchGames();})
 //var myWidth =  parseFloat(d3.select("body").style("width")) - 20 ;
+var bodyWidth = $("body").width();
 var data1;
 var teamsArr = [];
 var filtered = false;
 jQuery.getJSON("http://www.scoreatl.com/xml/scoreboard/hs/json/", function(data) {
 //jQuery.getJSON("testJSON2.json", function(data) {
+if(bodyWidth >= 700){
+	d3.selectAll("#chart").attr("class", "tiles four_up")
+}
+else if(bodyWidth >= 600){
+	//d3.selectAll("#chart").attr("class", "tiles three_up"); //this is the default
+}
+else if(bodyWidth >= 500){
+	d3.selectAll("#chart").attr("class", "tiles two_up")
+}
+else{
+	d3.selectAll("#chart").attr("class", "tiles_wrap")
+}
+
 //jQuery.getJSON("http://www.scoreatl.com/xml/scoreboard/hs/json/", function(data) {
 jQuery.getJSON("just1.json", function(data) {
 //jQuery.getJSON("testJSON3.json", function(data) {
