@@ -217,32 +217,9 @@ function doGrid(){
 	}//searchGames
 }//doGrid
 
-function setTimeFormat(passedHour) {
-	if (passedHour > 0 && passedHour < 13) {
-		if (passedHour === "0") passedHour = 12;
-		return (passedHour);
-	}
-	if (passedHour == 0) {
-		return (12);
-	}
-	return (passedHour-12);
-}
-function showZeroFilled(inValue) {
-	if (inValue > 9) {
-		return "" + inValue;
-	}
-	return "0" + inValue;
-}
-function setAmPm(timestamp) {
-	if (timestamp.getHours() < 12) {
-		return (" a.m.");
-	}
-	return (" p.m.");
-}
 function reformatTimestamp(timestamp) {
-	var formattedTime = setTimeFormat(timestamp.getHours()) + ":" + showZeroFilled(timestamp.getMinutes()) + setAmPm(timestamp);
-	var formattedYear = (timestamp.getMonth()+1)+"/"+timestamp.getDate()+"/"+(timestamp.getFullYear()+ '').substring(2, 4);//empty string before the substring is to convert to string more efficiently
-	return (formattedTime+" "+formattedYear);
+	var format = d3.time.format("%-I:%M %p"+" "+"%-m/%-d/%y");
+	return format(new Date(timestamp));
 }
 function checkFuture(){
 	if(showFuture){
