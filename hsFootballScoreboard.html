@@ -215,7 +215,7 @@ function doGrid(){
 				data2 = data1;
 			}
 			else{
-				data2 = data1.filter(function(d){return d.day === val});
+				data2 = aToZ(data1.filter(function(d){return d.day === val}));//if we were checking for games that have started we wouldn't need to run aToZ() here since it happens in aToZ() as well... or maybe we could remove it from that func instead
 			}
 			filterGames(data2);
 		}
@@ -285,15 +285,15 @@ function reformatTimestamp(timestamp) {
 		var temp = data1.filter(function(d){return d.hasStarted});
 		return aToZ(temp);
 	}
-	function aToZ(data){
-		return data.sort(function (a, b) {
-		   	if (a.away.name > b.away.name){ return 1;}
-		   	if (a.away.name < b.away.name){ return -1;}
-			// a must be equal to b
-			return 0;
-		});
-	}
 }*/
+function aToZ(data){
+	return data.sort(function (a, b) {
+	   	if (a.away.name > b.away.name){ return 1;}
+	   	if (a.away.name < b.away.name){ return -1;}
+		// a must be equal to b
+		return 0;
+	});
+}
 function hasGameStarted(startTime){
 	return startTime <= currentDate.getTime();
 }
