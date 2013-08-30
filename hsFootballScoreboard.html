@@ -179,18 +179,17 @@ jQuery.getJSON("data/testJSON3.json", function(data) {
 	}*/
 });
 function doGrid(){
+	var data2;
 	var chart = d3.select("#chart").selectAll("li.game");
+	filterDays()
+	
 	if(data1.length >1){
 		buildGrid();
 	}
 	else{
 		justOne();
 	}
-	function buildGrid(){
-		var data2;
-		$("#searchBox").val(""); //clear any left over searches
-		teamsArr = teamsArr.sort();
-		
+	function filterDays(){
 		if(currentDate.day === 4){
 			$("#daySelect").prop("selectedIndex", 2);
 			handleDays(4);
@@ -220,7 +219,10 @@ function doGrid(){
 			}
 			filterGames(data2);
 		}
-			
+	}//filterDays
+	function buildGrid(){
+		$("#searchBox").val(""); //clear any left over searches
+		teamsArr = teamsArr.sort();
 		//data2 = checkFuture(); //this is broken but can probably be fixed by calling checkFuture(data2) instead (func will also need to be updated to receive passed array)
 		d3.select("#numScores").text(data2.length);
 		var tempChart = chart.data(data2, function(d){return d.away.name});
