@@ -73,26 +73,46 @@ margin:0;
 #menu{
 	font-size:12px;
 }
+#daySelect option{
+	font-size:12px;
+}
+#futureDiv{
+	font-size:11px;
+}
+#future{
+	width:14px;
+}
 </style>
 </head>
 <body>
 <div id="scoreboard">
-<div class="sixteen colgrid" id="menu">
-<ul class="row" id="filters">
-	<li class="field five columns alpha"><input class="search searchform input" id="searchBox" type="search" placeholder="Search for a school"><button id="resetBtn" type="button" class="button">Reset</button></li>
-	<li class="field four columns">Results: <span class="input text" id="numScores"> </span></li>
-	<li class="five columns omega" id="futureDiv">Show later games? <input type="checkbox" id="future"/></li>
-</ul>
-</div>
-<div class="row"><ul id="chart" class="tiles three_up"></ul></div>
+	<div id="menu">
+		<ul class="row" id="filters">
+			<li class="field four columns alpha"><input class="search searchform input" id="searchBox" type="search" placeholder="Search for a school"><button id="resetBtn" type="button" class="button">Reset</button></li>
+			<li class="field three columns">Results: <span class="input text" id="numScores">-</span></li>
+			<li class="field four columns">
+				<div class="picker">
+					<select id="daySelect">
+						<option value="#" disabled>Choose which games to display</option>
+						<option value="3">All games</option>
+						<option value="4">Thursday games</option><option value="5">Friday games</option><option value="6">Saturday games</option>
+					</select>
+				</div>
+				<!--<div id="futureDiv">Show later games? <input type="checkbox" id="future"/></div>-->
+			</li>		
+		</ul>
+	</div>
+	<div class="row"><ul id="chart" class="tiles three_up"></ul></div>
 </div>
 
 <script type="text/javascript">
-var showFuture = false;
 //var myWidth =  parseFloat(d3.select("body").style("width")) - 20 ;
+//var showFuture = false;
 var bodyWidth = $("body").width();
 var data1;
 var teamsArr = [];
+var currentDate = new Date();
+currentDate.day = currentDate.getDay();
 var filtered = false;
 if(bodyWidth >= 700){
 	d3.selectAll("#chart").attr("class", "tiles four_up")
@@ -129,7 +149,8 @@ jQuery.getJSON("data/testJSON3.json", function(data) {
 		var awayScore = parseInt(game.away.score);
 		var startTime = new Date(game.startTime);
 		game.startTime = startTime;
-		game.hasStarted = hasGameStarted(startTime);
+		//game.hasStarted = hasGameStarted(startTime);
+		game.day = startTime.getDay();
 		if(awayScore > homeScore){
 			awayClass = "winner";
 		}
@@ -141,7 +162,7 @@ jQuery.getJSON("data/testJSON3.json", function(data) {
 	}
 	doGrid();
 	
-	if(data1.length > parseInt($("#numScores").text())){
+	/*if(data1.length > parseInt($("#numScores").text())){
 		$('#future').prop('checked', false);//handle browser form caching
 		$("#future").change(function() {
 		    if(this.checked) {
@@ -155,7 +176,7 @@ jQuery.getJSON("data/testJSON3.json", function(data) {
 	}
 	else{
 		$("#futureDiv").hide();
-	}
+	}*/
 });
 function doGrid(){
 	var chart = d3.select("#chart").selectAll("li.game");
@@ -166,9 +187,41 @@ function doGrid(){
 		justOne();
 	}
 	function buildGrid(){
+		var data2;
 		$("#searchBox").val(""); //clear any left over searches
 		teamsArr = teamsArr.sort();
-		var data2 = checkFuture();
+		
+		if(currentDate.day === 4){
+			$("#daySelect").prop("selectedIndex", 2);
+			handleDays(4);
+		}
+		else if(currentDate.day === 5){
+			$("#daySelect").prop("selectedIndex", 3);
+			handleDays(5);
+		}
+		else if(currentDate.day === 6){
+			$("#daySelect").prop("selectedIndex", 4);
+			handleDays(6);
+		}
+		else{
+			$("#daySelect").prop("selectedIndex", 1);
+			handleDays(3);
+		}
+		$("#daySelect").change(function(){
+			handleDays(+this.value);
+		})
+		
+		function handleDays(val){
+			if(val === 3){					
+				data2 = data1;
+			}
+			else{
+				data2 = data1.filter(function(d){return d.day === val});
+			}
+			filterGames(data2);
+		}
+			
+		//data2 = checkFuture(); //this is broken but can probably be fixed by calling checkFuture(data2) instead (func will also need to be updated to receive passed array)
 		d3.select("#numScores").text(data2.length);
 		var tempChart = chart.data(data2, function(d){return d.away.name});
 		
@@ -190,7 +243,7 @@ function doGrid(){
 		select: function( event, ui){
 			filtered = true;
 			var newdata = data1.filter(function(d) {return d.home.name === ui.item.value | d.away.name === ui.item.value});
-			searchGames(newdata);
+			filterGames(newdata);
 		}
 	})
 
@@ -202,7 +255,7 @@ function doGrid(){
 		} 
 	})
 
-	function searchGames(newdata){
+	function filterGames(newdata){
 		d3.select("#numScores").text(newdata.length);
 		
 		var chart2 = d3.select("#chart").selectAll("li.game")
@@ -214,14 +267,14 @@ function doGrid(){
 		
 		d3.transition(chart2.exit())
 			.remove();
-	}//searchGames
+	}//filterGames
 }//doGrid
 
 function reformatTimestamp(timestamp) {
 	var format = d3.time.format("%-I:%M %p"+" "+"%-m/%-d/%y");
 	return format(new Date(timestamp));
 }
-function checkFuture(){
+/*function checkFuture(){
 	if(showFuture){
 		return aToZ(data1);
 	}
@@ -238,9 +291,9 @@ function checkFuture(){
 			return 0;
 		});
 	}
-}
+}*/
 function hasGameStarted(startTime){
-	return startTime <= new Date().getTime();
+	return startTime <= currentDate.getTime();
 }
 </script>
 <!--<script>
