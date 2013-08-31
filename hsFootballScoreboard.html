@@ -58,9 +58,6 @@ margin:0;
 	padding-left:4px;
 	float:left;
 }
-.row{
-	min-width:300px;/*Gumby default 320*/
-}
 #numScores{
 	padding:4px 7px;
 }
@@ -86,6 +83,11 @@ margin:0;
 	cursor: pointer; /*our anchor tag is empty so it won't do this by default. Fix to not use anchors but buttons*/
 }
 /*Gumby overrides*/
+.row{
+	min-width:300px;/*Gumby default 320*/
+	margin: 0 0;
+	padding: 0 0;
+}
 .field.prepend input, .field.prepend .input, .field.append input, .field.append .input {
 	max-width: 90%;
 }
