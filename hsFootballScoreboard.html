@@ -7,7 +7,7 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <link rel="stylesheet" href="http://host.coxmediagroup.com/ajc/digitalprojects/global/css/iFrame_Medley.css" type="text/css"/>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
-<link rel="stylesheet" href="css/gumby.css" type="text/css"/>
+<link rel="stylesheet" href="http://alt.coxnewsweb.com/ajc/_newsapps/2013/temp/scoreboard/gumby.css" type="text/css"/>
 <script src="http://alt.coxnewsweb.com/ajc/_newsapps/libraries/css/gumby/js/libs/modernizr-2.6.2.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
@@ -120,12 +120,11 @@ i[class^="icon-"], i[class*=" icon-"] {
 </div>
 
 <script type="text/javascript">
-//var myWidth =  parseFloat(d3.select("body").style("width")) - 20 ;
 $.support.cors = true;//this is the fix CORS in IE9 but I don't know if this or the jQuery.XDomainRequest.js is what did the trick. Check later.
 //var showFuture = false;
 var bodyWidth = $("body").width();
-var data1;
-var teamsArr = [];
+var data1, teamsArr = [];
+var yScale, gameHeight;
 var currentDate = new Date();
 currentDate.day = currentDate.getDay();
 var filtered = false;
@@ -141,10 +140,8 @@ else if(bodyWidth >= 500){
 else{
 	d3.selectAll("#chart").attr("class", "tiles_wrap")
 }
-
-//jQuery.getJSON("http://www.scoreatl.com/xml/scoreboard/hs/json/", function(data) {
-//jQuery.getJSON("data/just1.json", function(data) {
-jQuery.getJSON("data/testJSON3.json", function(data) {
+jQuery.getJSON("http://www.scoreatl.com/xml/scoreboard/hs/json/", function(data) {
+//jQuery.getJSON("data/week1.json", function(data) {
 	data1 = data.game;
 	if(data1.length === undefined){
 		setProps(data1);
@@ -242,7 +239,7 @@ function doGrid(){
 		d3.select("#numScores").text(data2.length);
 		var tempChart = chart.data(data2, function(d){return d.away.name});
 		
-		tempChart.exit().remove();
+		tempChart.exit().remove();//we will call this again when "show later games" is toggled so we will need to removed the later ones here
 		
 		tempChart.enter().append("li")
 			.attr("class", "game")
@@ -255,6 +252,7 @@ function doGrid(){
 			.attr("class", "game")
 			.html(data1.gameText);
 	}
+
 	$("#searchBox").autocomplete({
 		source: teamsArr,
 		select: function( event, ui){
@@ -262,7 +260,7 @@ function doGrid(){
 			var newdata = data1.filter(function(d) {return d.home.name === ui.item.value | d.away.name === ui.item.value});
 			filterGames(newdata);
 		}
-	})
+	});
 
 	$("#resetBtn").click(function(){
 		if(filtered){
@@ -277,13 +275,13 @@ function doGrid(){
 		
 		var chart2 = d3.select("#chart").selectAll("li.game")
 			.data(newdata, function(d) {return d.away.name });
+			
+		d3.transition(chart2.exit())
+			.remove();
 		
 		chart2.enter().append("li")
 			.attr("class", "game")
 			.html(function(d){ return d.gameText })
-		
-		d3.transition(chart2.exit())
-			.remove();
 	}//filterGames
 }//doGrid
 
