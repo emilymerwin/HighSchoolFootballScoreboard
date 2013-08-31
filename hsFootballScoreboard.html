@@ -12,6 +12,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.2.2/d3.v3.min.js"></script>
+<script src="http://alt.coxnewsweb.com/ajc/_newsapps/2013/temp/scoreboard/js/jQuery.XDomainRequest.js"></script><!--not sure if this is doing anything or not, this is to make CORS work in IE 9 but script fix might have been the trick-->
 <style type="text/css">
 #scoreboard{
 	max-width:972px;
@@ -120,6 +121,7 @@ i[class^="icon-"], i[class*=" icon-"] {
 
 <script type="text/javascript">
 //var myWidth =  parseFloat(d3.select("body").style("width")) - 20 ;
+$.support.cors = true;//this is the fix CORS in IE9 but I don't know if this or the jQuery.XDomainRequest.js is what did the trick. Check later.
 //var showFuture = false;
 var bodyWidth = $("body").width();
 var data1;
