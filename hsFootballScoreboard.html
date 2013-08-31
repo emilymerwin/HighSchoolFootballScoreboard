@@ -82,15 +82,25 @@ margin:0;
 #future{
 	width:14px;
 }
+#resetBtn a{
+	cursor: pointer; /*our anchor tag is empty so it won't do this by default. Fix to not use anchors but buttons*/
+}
+/*Gumby overrides*/
+.field.prepend input, .field.prepend .input, .field.append input, .field.append .input {
+	max-width: 90%;
+}
+i[class^="icon-"], i[class*=" icon-"] {
+    margin: 0 0;
+    min-width: 0;
+}
 </style>
 </head>
 <body>
 <div id="scoreboard">
 	<div id="menu">
 		<ul class="row" id="filters">
-			<li class="field four columns alpha"><input class="search searchform input" id="searchBox" type="search" placeholder="Search for a school"><button id="resetBtn" type="button" class="button">Reset</button></li>
-			<li class="field three columns">Results: <span class="input text" id="numScores">-</span></li>
-			<li class="field four columns">
+			<li class="append field four columns alpha"><input class="search searchform input" id="searchBox" type="search" placeholder="Search for a school"><div class="medium btn default" id="resetBtn"><a><i class="icon-cancel" id="cancel"></i></a></div></li>
+			<li class="field push_one four columns">
 				<div class="picker">
 					<select id="daySelect">
 						<option value="#" disabled>Choose which games to display</option>
@@ -99,7 +109,8 @@ margin:0;
 					</select>
 				</div>
 				<!--<div id="futureDiv">Show later games? <input type="checkbox" id="future"/></div>-->
-			</li>		
+			</li>
+			<li class="field three columns omega">Results: <span class="input text" id="numScores">-</span></li>		
 		</ul>
 	</div>
 	<div class="row"><ul id="chart" class="tiles three_up"></ul></div>
