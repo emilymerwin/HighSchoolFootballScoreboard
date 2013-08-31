@@ -1,0 +1,1771 @@
+{
+  "game":[
+    {
+      "@attributes":{
+        "id":"34887"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-24T20:30-04:00",
+      "home":{
+        "name":"McEachern",
+        "score":"31",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAAA",
+        "region":"4\/AAAAAA"
+      },
+      "away":{
+        "name":"Brookwood",
+        "score":"10",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAAA",
+        "region":"8\/AAAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34889"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-24T19:30-04:00",
+      "home":{
+        "name":"Metter",
+        "score":"21",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AA",
+        "region":"2\/AA"
+      },
+      "away":{
+        "name":"ECI",
+        "score":"20",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"3\/A"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"35424"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-24T19:30-04:00",
+      "home":{
+        "name":"Bremen",
+        "score":"14",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AA",
+        "region":"5\/AA"
+      },
+      "away":{
+        "name":"Alexander",
+        "score":"41",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAA",
+        "region":"5\/AAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34890"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-24T19:00-04:00",
+      "home":{
+        "name":"Norcross",
+        "score":"0",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAAA",
+        "region":"7\/AAAAAA"
+      },
+      "away":{
+        "name":"Washington (Fla.)",
+        "score":"55",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"1\/AAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34886"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-24T17:30-04:00",
+      "home":{
+        "name":"North Gwinnett",
+        "score":"34",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAAA",
+        "region":"7\/AAAAAA"
+      },
+      "away":{
+        "name":"Camden Co.",
+        "score":"14",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAAA",
+        "region":"1\/AAAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"35426"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-24T17:00-04:00",
+      "home":{
+        "name":"Jenkins Co.",
+        "score":"0",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"3\/A"
+      },
+      "away":{
+        "name":"Johnson Co.",
+        "score":"40",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"3\/A"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"35425"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-24T16:00-04:00",
+      "home":{
+        "name":"Haralson Co.",
+        "score":"0",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAA",
+        "region":"4\/AAA"
+      },
+      "away":{
+        "name":"Central, Carroll",
+        "score":"48",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAA",
+        "region":"4\/AAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34891"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-24T15:30-04:00",
+      "home":{
+        "name":"South Gwinnett",
+        "score":"21",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAAA",
+        "region":"8\/AAAAAA"
+      },
+      "away":{
+        "name":"Lincoln (Fla.)",
+        "score":"34",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"1\/AAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34885"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-24T14:30-04:00",
+      "home":{
+        "name":"Colquitt Co.",
+        "score":"21",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAAA",
+        "region":"1\/AAAAAA"
+      },
+      "away":{
+        "name":"Grayson",
+        "score":"6",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAAA",
+        "region":"8\/AAAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"35431"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-24T13:00-04:00",
+      "home":{
+        "name":"Mt. Vernon",
+        "score":"14",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"5\/A"
+      },
+      "away":{
+        "name":"Mt. Pisgah",
+        "score":"48",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"6\/A"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34884"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-24T11:45-04:00",
+      "home":{
+        "name":"Peachtree Ridge",
+        "score":"23",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAAA",
+        "region":"7\/AAAAAA"
+      },
+      "away":{
+        "name":"Walton",
+        "score":"17",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAAA",
+        "region":"5\/AAAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34883"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-24T09:00-04:00",
+      "home":{
+        "name":"Chattahoochee",
+        "score":"16",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAAA",
+        "region":"6\/AAAAAA"
+      },
+      "away":{
+        "name":"Kell",
+        "score":"26",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"7\/AAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34871"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T20:15-04:00",
+      "home":{
+        "name":"Thomas Co. Central",
+        "score":"38",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"1\/AAAAA"
+      },
+      "away":{
+        "name":"Thomasville",
+        "score":"0",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AA",
+        "region":"1\/AA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34857"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T20:00-04:00",
+      "home":{
+        "name":"South Atlanta",
+        "score":"0",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAA",
+        "region":"6\/AAAA"
+      },
+      "away":{
+        "name":"Lithonia",
+        "score":"36",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAA",
+        "region":"6\/AAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34858"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T20:00-04:00",
+      "home":{
+        "name":"Stone Mountain",
+        "score":"26",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAA",
+        "region":"6\/AAAA"
+      },
+      "away":{
+        "name":"GAC",
+        "score":"48",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AA",
+        "region":"6\/AA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34837"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Coffee",
+        "score":"20",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAAA",
+        "region":"1\/AAAAAA"
+      },
+      "away":{
+        "name":"Whitewater",
+        "score":"7",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"4\/AAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34838"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Campbell",
+        "score":"36",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAAA",
+        "region":"4\/AAAAAA"
+      },
+      "away":{
+        "name":"Morrow",
+        "score":"6",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAAA",
+        "region":"2\/AAAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34839"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Newnan",
+        "score":"21",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAAA",
+        "region":"3\/AAAAAA"
+      },
+      "away":{
+        "name":"Marietta",
+        "score":"52",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAAA",
+        "region":"4\/AAAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34840"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Hillgrove",
+        "score":"26",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAAA",
+        "region":"4\/AAAAAA"
+      },
+      "away":{
+        "name":"Westlake",
+        "score":"6",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAAA",
+        "region":"3\/AAAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34841"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Sprayberry",
+        "score":"14",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"7\/AAAAA"
+      },
+      "away":{
+        "name":"Wheeler",
+        "score":"44",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAAA",
+        "region":"5\/AAAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34842"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Johns Creek",
+        "score":"6",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAAA",
+        "region":"6\/AAAAAA"
+      },
+      "away":{
+        "name":"Woodstock",
+        "score":"34",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAAA",
+        "region":"5\/AAAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34843"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Bainbridge",
+        "score":"3",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"1\/AAAAA"
+      },
+      "away":{
+        "name":"East Gadsden (Fla.)",
+        "score":"0",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"1\/AAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34844"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Cross Creek",
+        "score":"25",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAA",
+        "region":"3\/AAAA"
+      },
+      "away":{
+        "name":"Greenbrier",
+        "score":"14",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"2\/AAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34845"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"McIntosh Co. Academy",
+        "score":"3",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AA",
+        "region":"2\/AA"
+      },
+      "away":{
+        "name":"Glynn Acad.",
+        "score":"14",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"3\/AAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34847"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"New Manchester",
+        "score":"21",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"5\/AAAAA"
+      },
+      "away":{
+        "name":"Paulding Co.",
+        "score":"13",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"5\/AAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34848"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Villa Rica",
+        "score":"27",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"5\/AAAAA"
+      },
+      "away":{
+        "name":"Woodland, Bartow",
+        "score":"3",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"5\/AAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34850"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Holy Innocents'",
+        "score":"28",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"5\/A"
+      },
+      "away":{
+        "name":"Lakeside, DeKalb",
+        "score":"14",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"6\/AAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34852"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Cedar Grove",
+        "score":"12",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAA",
+        "region":"6\/AAA"
+      },
+      "away":{
+        "name":"Tucker",
+        "score":"51",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"6\/AAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34853"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Osborne",
+        "score":"25",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"7\/AAAAA"
+      },
+      "away":{
+        "name":"Chapel Hill",
+        "score":"14",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAA",
+        "region":"4\/AAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34854"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Swainsboro",
+        "score":"13",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAA",
+        "region":"3\/AAA"
+      },
+      "away":{
+        "name":"Worth Co.",
+        "score":"26",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAA",
+        "region":"1\/AAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34855"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Vidalia",
+        "score":"27",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AA",
+        "region":"2\/AA"
+      },
+      "away":{
+        "name":"West Laurens",
+        "score":"3",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAA",
+        "region":"2\/AAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34856"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"Postponed",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Thomson",
+        "score":"0",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAA",
+        "region":"3\/AAA"
+      },
+      "away":{
+        "name":"Burke Co.",
+        "score":"0",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAA",
+        "region":"3\/AAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34859"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL\/OT",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Dalton",
+        "score":"27",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAA",
+        "region":"7\/AAAA"
+      },
+      "away":{
+        "name":"Ringgold",
+        "score":"33",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAA",
+        "region":"5\/AAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34860"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"West Hall",
+        "score":"35",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAA",
+        "region":"7\/AAA"
+      },
+      "away":{
+        "name":"Johnson, Gainesville",
+        "score":"0",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAA",
+        "region":"8\/AAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34861"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL\/OT",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Baconton Charter",
+        "score":"6",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"1\/A"
+      },
+      "away":{
+        "name":"Brantley Co.",
+        "score":"12",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAA",
+        "region":"1\/AAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34862"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Dodge County",
+        "score":"38",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAA",
+        "region":"3\/AAA"
+      },
+      "away":{
+        "name":"Southwest, Macon",
+        "score":"0",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAA",
+        "region":"2\/AAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34863"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Fitzgerald",
+        "score":"14",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AA",
+        "region":"1\/AA"
+      },
+      "away":{
+        "name":"Jefferson Co.",
+        "score":"28",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAA",
+        "region":"3\/AAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34864"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"Postponed",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Washington Co.",
+        "score":"0",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAA",
+        "region":"3\/AAA"
+      },
+      "away":{
+        "name":"ELCA",
+        "score":"0",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"5\/A"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34865"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Heard Co.",
+        "score":"0",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AA",
+        "region":"5\/AA"
+      },
+      "away":{
+        "name":"Callaway",
+        "score":"34",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAA",
+        "region":"4\/AAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34867"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Westminster",
+        "score":"0",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AA",
+        "region":"6\/AA"
+      },
+      "away":{
+        "name":"Blessed Trinity",
+        "score":"18",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAA",
+        "region":"6\/AAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34868"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Lovett",
+        "score":"21",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AA",
+        "region":"6\/AA"
+      },
+      "away":{
+        "name":"Woodward Acad.",
+        "score":"14",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAA",
+        "region":"6\/AAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34869"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"East Hall",
+        "score":"27",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAA",
+        "region":"7\/AAA"
+      },
+      "away":{
+        "name":"Dawson Co.",
+        "score":"29",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAA",
+        "region":"7\/AAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34870"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Clinch Co.",
+        "score":"14",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"2\/A"
+      },
+      "away":{
+        "name":"Brooks Co.",
+        "score":"26",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AA",
+        "region":"1\/AA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34872"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Atkinson Co.",
+        "score":"6",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AA",
+        "region":"2\/AA"
+      },
+      "away":{
+        "name":"Lanier Co.",
+        "score":"13",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"2\/A"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34874"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Aquinas",
+        "score":"52",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"7\/A"
+      },
+      "away":{
+        "name":"East Laurens",
+        "score":"14",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AA",
+        "region":"3\/AA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34875"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Temple",
+        "score":"0",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AA",
+        "region":"5\/AA"
+      },
+      "away":{
+        "name":"Walker",
+        "score":"21",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"6\/A"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34876"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Calvary Day",
+        "score":"22",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"3\/A"
+      },
+      "away":{
+        "name":"Landmark Chr.",
+        "score":"30",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"5\/A"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34877"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Savannah Country Day",
+        "score":"14",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"3\/A"
+      },
+      "away":{
+        "name":"Hardeeville (S.C.)",
+        "score":"20",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"1\/AAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34879"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Darlington",
+        "score":"50",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"6\/A"
+      },
+      "away":{
+        "name":"Murphy (N.C.)",
+        "score":"6",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"1\/AAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34880"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"St. Francis",
+        "score":"7",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"6\/A"
+      },
+      "away":{
+        "name":"Prince Avenue Chr.",
+        "score":"54",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"8\/A"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34881"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Athens Acad.",
+        "score":"41",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"8\/A"
+      },
+      "away":{
+        "name":"Glascock Co.",
+        "score":"8",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"7\/A"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34882"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Lincoln Co.",
+        "score":"41",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"7\/A"
+      },
+      "away":{
+        "name":"McCormick (S.C.)",
+        "score":"0",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"1\/AAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"35428"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Wayne Co.",
+        "score":"35",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAA",
+        "region":"3\/AAAA"
+      },
+      "away":{
+        "name":"Brunswick",
+        "score":"20",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAAA",
+        "region":"1\/AAAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"35429"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T19:30-04:00",
+      "home":{
+        "name":"Towns Co.",
+        "score":"0",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"8\/A"
+      },
+      "away":{
+        "name":"Hayesville (N.C.)",
+        "score":"20",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"1\/AAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34866"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T17:30-04:00",
+      "home":{
+        "name":"Jackson, Atlanta",
+        "score":"0",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAA",
+        "region":"4\/AAA"
+      },
+      "away":{
+        "name":"Towers",
+        "score":"13",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAA",
+        "region":"6\/AAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"34849"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-23T17:15-04:00",
+      "home":{
+        "name":"Clarkston",
+        "score":"7",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"6\/AAAAA"
+      },
+      "away":{
+        "name":"Arabia Mountain",
+        "score":"40",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"6\/AAAAA"
+      },
+      "state":"GA"
+    },
+    {
+      "@attributes":{
+        "id":"35275"
+      },
+      "category":"PREP",
+      "type":"VARSITY FOOTBALL",
+      "statusText":"FINAL",
+      "infoURL":{
+        
+      },
+      "startTime":"2013-08-22T19:00-04:00",
+      "home":{
+        "name":"Jenkins",
+        "score":"6",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"AAAAA",
+        "region":"3\/AAAAA"
+      },
+      "away":{
+        "name":"Savannah Chr.",
+        "score":"6",
+        "quarterBreakdown":{
+          
+        },
+        "classification":"A",
+        "region":"3\/A"
+      },
+      "state":"GA"
+    }
+  ]
+}
