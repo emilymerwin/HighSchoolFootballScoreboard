@@ -266,8 +266,11 @@ function doGrid(){
 		if(filtered){
 			d3.selectAll("li.game").remove(); //get rid of any search items on display
 			filtered = false; 
-			buildGrid(); 
-		} 
+			buildGrid();
+		}
+		else if($("#searchBox").val() != ""){ //if text is entered in the search box but nothing is selected, clear search box
+			$("#searchBox").val(""); 
+		}
 	})
 
 	function filterGames(newdata){
