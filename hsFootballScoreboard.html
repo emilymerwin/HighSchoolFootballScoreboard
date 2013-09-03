@@ -256,12 +256,20 @@ function doGrid(){
 	$("#searchBox").autocomplete({
 		source: teamsArr,
 		select: function( event, ui){
-			filtered = true;
-			var newdata = data1.filter(function(d) {return d.home.name === ui.item.value | d.away.name === ui.item.value});
-			filterGames(newdata);
+			doSearchBox(ui.item.value);
+		}
+	}).keydown(function(e){
+		if (e.keyCode === 13){
+			doSearchBox(new RegExp ($("#searchBox").val(), "i"));//make case insensitive
+			$(e.target).autocomplete("close");//since no selection was made we need to force close the autocomplete menu
 		}
 	});
-
+	
+	function doSearchBox(searchTerm){
+		filtered = true;
+		filterGames(data1.filter(function(d) {return d.home.name.search(searchTerm) !== -1 | d.away.name.search(searchTerm) !== -1})); //include partial matches
+	}
+	
 	$("#resetBtn").click(function(){
 		if(filtered){
 			d3.selectAll("li.game").remove(); //get rid of any search items on display
