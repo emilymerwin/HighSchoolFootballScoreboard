@@ -224,7 +224,7 @@ function doGrid(){
 		
 		function handleDays(val){
 			if(val === 3){					
-				data2 = data1;
+				data2 = aToZ(data1);
 			}
 			else{
 				data2 = aToZ(data1.filter(function(d){return d.day === val}));//if we were checking for games that have started we wouldn't need to run aToZ() here since it happens in aToZ() as well... or maybe we could remove it from that func instead
