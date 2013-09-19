@@ -6,6 +6,8 @@ scoreboard_transition_test.html
 
 data/SampleWeek.js
 
+data/SampleWeek.json
+
 data/SampleWeek.xml
 
 data/just1.json
@@ -25,5 +27,3 @@ data/week2.json
 vendor/gumby_scoreboard.css
 
 vendor/gumby_edited.css
-
-vendor/gumbyrefs.txt
