@@ -1,13 +1,8 @@
-
-SampleWeek.json
-
-gumby.css
-
-gumby.css
-
 .htaccess
 
-css/gumby_football.css
+oldmedleypage.html
+
+scoreboard_transition_test.html
 
 data/SampleWeek.js
 
@@ -25,14 +20,10 @@ data/thursday.json
 
 data/week1b.json
 
-oldmedleypage.html
-
-scoreboard_transition_test.html
-
-SampleWeek.json
-
-gumby.css
-
-just1.json
-
 data/week2.json
+
+vendor/gumby_scoreboard.css
+
+vendor/gumby_edited.css
+
+vendor/gumbyrefs.txt
