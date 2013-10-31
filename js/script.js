@@ -17,17 +17,12 @@
 	jQuery.getJSON("http://www.scoreatl.com/xml/scoreboard/hs/json/", function(data) {
 	//jQuery.getJSON("data/week1.json", function(data) {
 		data1 = data.game;
-		if(data1.length === undefined){
-			setProps(data1);
-		} else{
-			for (var i=0; i<data1.length; i++){
-				teamsArr.push(data1[i].home.name);//we don't a search menu if there's only one game, so do that here instead of in setProps
-				teamsArr.push(data1[i].away.name);
-				setProps(data1[i]);	
-			}
-		}
 
-		function setProps(game){
+		for (var i=0; i<data1.length; i++){
+			var game = data1[i];
+			teamsArr.push(game.home.name);
+			teamsArr.push(game.away.name);
+
 			var awayClass = "", homeClass = "", homeScore = parseInt(game.home.score), awayScore = parseInt(game.away.score), startTime = new Date(game.startTime);
 			game.startTime = startTime;
 			//game.hasStarted = hasGameStarted(startTime);
@@ -37,8 +32,8 @@
 			} else if(awayScore < homeScore){
 				homeClass = "winner";
 			}
-			game.gameText = "<ul class='team row tiles'><li class='"+awayClass+"'><strong>A: </strong>"+game.away.name+"</li><li class='score "+awayClass+"'>"+awayScore+"</li></ul><hr><ul class='team row tiles'><li class='"+homeClass+"'><strong>H: </strong>"+game.home.name+"</li><li class='score "+homeClass+"'>"+homeScore+"</li></ul><ul class='row tiles meta'><li class='startTime'>"+reformatTimestamp(startTime)+"</li><li class='gameStatus'> "+game.statusText+"</li></ul>";
-		}
+			game.gameText = "<ul class='team row tiles'><li class='"+awayClass+"'><strong>A: </strong>"+game.away.name+"</li><li class='score "+awayClass+"'>"+awayScore+"</li></ul><hr><ul class='team row tiles'><li class='"+homeClass+"'><strong>H: </strong>"+game.home.name+"</li><li class='score "+homeClass+"'>"+homeScore+"</li></ul><ul class='row tiles meta'><li class='startTime'>"+reformatTimestamp(startTime)+"</li><li class='gameStatus'> "+game.statusText+"</li></ul>";	
+		} //for
 		doGrid();
 
 		/*if(data1.length > parseInt($("#numScores").text())){
@@ -61,12 +56,7 @@
 	function doGrid(){
 		var data2, chart = d3.select("#chart").selectAll("li.game");
 		filterDays();
-
-		if(data1.length >1){
-			buildGrid();
-		} else{
-			justOne();
-		}
+		buildGrid();
 
 		function filterDays(){
 			if(currentDate.day === 4){
@@ -109,14 +99,6 @@
 				.attr("class", "game")
 				.html(function(d) { return d.gameText; });
 		}//buildGrid
-
-		function justOne(){
-			$("#filters").hide();
-			d3.select("#numScores").text("1");
-			$("#chart").append("li")
-				.attr("class", "game")
-				.html(data1.gameText);
-		}
 
 		$("#searchBox").autocomplete({
 			source: teamsArr,
