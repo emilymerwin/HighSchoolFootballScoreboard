@@ -4,14 +4,11 @@
 .game {
 	margin-top: 10px;
 	background-color: #EFEFEF;
-	font-size: 11px;
 }
 .team {
-	padding: 0 0 0 4px;
-	font-size: 12px !important;
+	font-size: 12px;
 }
 .score {
-	text-align: right;
 	padding-right: 4px;
 	float: right !important;
 }
@@ -22,13 +19,10 @@ hr {
 	background-color: #FFF;
 	border-bottom: 1px dashed gray;
 	border-top: none;
-	height: 0;
-	line-height: 0;
 	margin: 0;
-	text-align: center;
 }
 #chart .game .winner {
-	color: red !important;
+	color: red;
 }
 .meta {
 	background-color: #E0E0E0;
@@ -41,16 +35,9 @@ hr {
 }
 .startTime {
 	padding-left: 4px;
-	float: left;
 }
 #numScores {
 	padding: 4px 7px;
-}
-.game .tiles {
-	margin: 0 !important;
-}
-.game .tiles li {
-	margin: 0 !important;
 }
 #filters {
 	font-size: 12px;
@@ -58,12 +45,12 @@ hr {
 #daySelect option {
 	font-size: 12px;
 }
-#futureDiv {
+/*#futureDiv {
 	font-size: 11px;
 }
 #future {
 	width: 14px;
-}
+}*/
 #resetBtn a {
 	cursor: pointer; /*our anchor tag is empty so it won't do this by default. Fix to not use anchors but buttons*/
 }
