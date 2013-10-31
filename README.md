@@ -1,4 +1,4 @@
-#High School Football Scoreboard
+#Highschool Football Scoreboard
 - Rebuilt for 2013 season with HTML/jQuery/d3 to replace old flash version
 - Live <a href="http://www.ajc.com/high-school-football-scoreboard/" taret="_blank">here</a>
 - Currently not compatible with IE 8 or older due to CORS and d3 support. Might be able to fix for IE 8 but CORS won't work for anything older
