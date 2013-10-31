@@ -10,10 +10,6 @@
 <link rel="stylesheet" href="vendor/gumby_scoreboard.css" type="text/css"/>
 <link rel="stylesheet" href="vendor/gumby_overrides.css" type="text/css"/>
 <script src="http://alt.coxnewsweb.com/ajc/_newsapps/libraries/css/gumby/js/libs/modernizr-2.6.2.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.2.2/d3.v3.min.js"></script>
-<script src="js/jQuery.XDomainRequest.js"></script><!--not sure if this is doing anything or not, this is to make CORS work in IE 9 but script fix might have been the trick-->
 <style type="text/css">
 #scoreboard{
 	max-width:972px;
@@ -102,6 +98,8 @@ i[class^="icon-"], i[class*=" icon-"] {
 </head>
 <body>
 <div id="scoreboard">
+	<!--[if lte IE 8]><p>Your browser is out of date. Please <a href="http://www.browser-update.org/update.html" target="_blank">upgrade your browser</a> to view this application.</p><p>If you are unable to upgrade your browser, click <a href="http://www.scoreatl.com/scoreboard/" target="_blank">here</a> to view the Score Atlanta scoreboard.</p><![endif]-->
+	<!--[if gte IE 9]><!-->
 	<div id="filters" class="row">
 		<ul>
 			<li class="append field four columns alpha"><input class="input" id="searchBox" type="search" placeholder="Search for a school"><div class="medium btn default" id="resetBtn"><a><i class="icon-cancel" id="cancel"></i></a></div></li>
@@ -119,6 +117,11 @@ i[class^="icon-"], i[class*=" icon-"] {
 		</ul>
 	</div>
 	<div class="row"><ul id="chart" class="tiles three_up"></ul></div>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.2.2/d3.v3.min.js"></script>
+	<script src="js/jQuery.XDomainRequest.js"></script>
+	<!--<![endif]-->
 </div>
 
 <script type="text/javascript">
