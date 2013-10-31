@@ -1,75 +1,75 @@
-#scoreboard{
-	max-width:972px;
+#scoreboard {
+	max-width: 972px;
 }
 .game {
 	margin-top: 10px;
 	background-color: #EFEFEF;
-	font-size:11px;
+	font-size: 11px;
 }
-.team{
+.team {
 	padding: 0 0 0 4px;
-	font-size:12px !important;
+	font-size: 12px !important;
 }
-.score{
-	text-align:right;
-	padding-right:4px;
-	float:right !important;
+.score {
+	text-align: right;
+	padding-right: 4px;
+	float: right !important;
 }
-li.game{
+li.game {
 	 padding-bottom: 0px;
 }
 hr {
-background-color:#FFF;
-border-bottom: 1px dashed gray;
-border-top:none;
-height:0px;
-line-height:0;
-text-align:center;
-margin:0;
+	background-color: #FFF;
+	border-bottom: 1px dashed gray;
+	border-top: none;
+	height: 0;
+	line-height: 0;
+	margin: 0;
+	text-align: center;
 }
-#chart .game .winner{
+#chart .game .winner {
 	color: red !important;
 }
-.meta{
-	background-color:#E0E0E0;
-	font-size:10px;
-	line-height:1.5em;
+.meta {
+	background-color: #E0E0E0;
+	font-size: 10px;
+	line-height: 1.5em;
 }
-.tiles li.gameStatus{
-	float:right;
-	padding-right:4px;
+.tiles li.gameStatus {
+	float: right;
+	padding-right: 4px;
 }
-.startTime{
-	padding-left:4px;
-	float:left;
+.startTime {
+	padding-left: 4px;
+	float: left;
 }
-#numScores{
-	padding:4px 7px;
+#numScores {
+	padding: 4px 7px;
 }
-.game .tiles{
-	margin:0 !important;
+.game .tiles {
+	margin: 0 !important;
 }
-.game .tiles li{
-	margin:0 !important;
+.game .tiles li {
+	margin: 0 !important;
 }
-#filters{
-	font-size:12px;
+#filters {
+	font-size: 12px;
 }
-#daySelect option{
-	font-size:12px;
+#daySelect option {
+	font-size: 12px;
 }
-#futureDiv{
-	font-size:11px;
+#futureDiv {
+	font-size: 11px;
 }
-#future{
-	width:14px;
+#future {
+	width: 14px;
 }
-#resetBtn a{
+#resetBtn a {
 	cursor: pointer; /*our anchor tag is empty so it won't do this by default. Fix to not use anchors but buttons*/
 }
 /*Gumby overrides*/
-.row{
-	min-width:276px;/*Gumby default 320*/
+.row {
+	min-width: 276px; /*Gumby default 320*/
 	margin: 0 0;
 	padding: 0 0;
 }
@@ -80,4 +80,4 @@ i[class^="icon-"], i[class*=" icon-"] {
     margin: 0 0;
     min-width: 0;
 }
-@media only screen and (max-width: 767px) { #filters ul li { float:left; margin-right:12px; } }
+@media only screen and (max-width: 767px) { #filters ul li { float: left; margin-right: 12px; } }
