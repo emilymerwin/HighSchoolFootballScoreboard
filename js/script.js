@@ -1,5 +1,4 @@
 (function() {
-	$.support.cors = true;//this is the fix CORS in IE9 but I don't know if this or the jQuery.XDomainRequest.js is what did the trick. Check later.
 	//var showFuture = false;
 	var bodyWidth = $("body").width();
 	var data1, teamsArr = [];
